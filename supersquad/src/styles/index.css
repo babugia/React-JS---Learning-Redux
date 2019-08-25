@@ -13,9 +13,29 @@ body {
 
 .right-button {
   cursor: pointer;
-  float: right;
 }
 
 .list-item {
   display: inline-block;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.hero-name {
+  font-weight: bold;
+}
+
+.hero-stats {
+  font-weight: lighter;
 }

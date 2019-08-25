@@ -11,12 +11,19 @@ class HeroList extends Component {
           {this.props.heroes.map(hero => {
             return (
               <li key={hero.id} className="list-group-item">
-                <div className="list-item">{hero.name}</div>
-								<div
-									className="list-item right-button"
-									onClick={() => this.props.removeCharacterById(hero.id)} 
-								>
-									-
+                <div className="main-container">
+                  <div className="stats-container">
+                    <div className="hero-name">{hero.name}</div>
+                    <div className="hero-stats">Strength: {hero.strength}</div>
+                    <div className="hero-stats">Speed: {hero.speed}</div>
+                    <div className="hero-stats">Intelligence: {hero.intelligence}</div>
+                  </div>
+                  <div
+                    className="right-button"
+                    onClick={() => this.props.removeCharacterById(hero.id)} 
+                    >
+                    -
+                  </div>
 								</div>
               </li>							
             );
