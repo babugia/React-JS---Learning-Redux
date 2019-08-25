@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { removeCharacterById } from '../actions'
+import { removeCharacterById, clearHeroes } from '../actions'
+import { Button } from 'reactstrap'
 
 class HeroList extends Component {
   render() {
@@ -29,6 +30,18 @@ class HeroList extends Component {
             );
           })}
         </ul>
+        {
+          this.props.heroes.length > 0 ?
+            <Button
+              color="warning"
+              className="mt-3 clear-button"
+              onClick={() => this.props.clearHeroes()}
+            > Clear all
+            </Button>
+            :
+              <div></div>
+        }
+        
       </div>
     );
   }
@@ -41,4 +54,4 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-  mapStateToProps, { removeCharacterById }) (HeroList);
+  mapStateToProps, { removeCharacterById, clearHeroes }) (HeroList);

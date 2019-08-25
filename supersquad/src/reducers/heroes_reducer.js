@@ -1,4 +1,4 @@
-import { ADD_CHARACTER, REMOVE_CHARACTER } from "../actions";
+import { ADD_CHARACTER, REMOVE_CHARACTER, CLEAR_HEROES } from "../actions";
 import { createCharacter } from "./helpers";
 
 function heroes(state = [], action) {
@@ -10,6 +10,9 @@ function heroes(state = [], action) {
       return heroes
     case REMOVE_CHARACTER:
       heroes = state.filter(item => item.id !== action.id)
+      return heroes
+    case CLEAR_HEROES:
+      heroes = []
       return heroes
     default:
       return state

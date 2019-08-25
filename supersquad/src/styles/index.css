@@ -15,6 +15,10 @@ body {
   cursor: pointer;
 }
 
+.clear-button {
+  float: left;
+}
+
 .list-item {
   display: inline-block;
 }
